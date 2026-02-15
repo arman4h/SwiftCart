@@ -37,10 +37,10 @@
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1 font-medium">
-            <li><a>Home</a></li>
-            <li><a>Product</a></li>
-            <li><a>About</a></li>
-            <li><a>Contact</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./product.html">Product</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="navbar-end">
@@ -183,7 +183,8 @@
             <div>
               <h2 class="text-lg font-bold mb-5">24/7 Support</h2>
               <p class="text-sm mb-4 font-regular text-gray-600">
-                We’re here to help anytime, day or night, whenever you need assistance.
+                We’re here to help anytime, day or night, whenever you need
+                assistance.
               </p>
             </div>
           </div>
@@ -237,7 +238,8 @@
             <div>
               <h2 class="text-lg font-bold mb-5">Easy Returns</h2>
               <p class="text-sm mb-4 font-regular text-gray-600">
-                Hassle-free returns and exchanges for a smooth, worry-free shopping experience.
+                Hassle-free returns and exchanges for a smooth, worry-free
+                shopping experience.
               </p>
             </div>
           </div>
@@ -246,25 +248,81 @@
     </main>
 
     <!-- Tredning -->
-     <main class="max-w-6xl mx-auto">
-        <h1>Trending Now</h1>
+    <main class="max-w-6xl mx-auto">
+      <h1>Trending Now</h1>
 
+      <!-- Dynamic Trending -->
+      <div></div>
+    </main>
 
-        <!-- Dynamic Trending -->
-        <div></div>
+    <footer class="bg-zinc-900 text-white">
+      <section class="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
+        <!-- Brand -->
+        <div>
+          <h2 class="text-2xl font-bold text-violet-500 mb-4">SwiftCart</h2>
+          <p class="text-sm text-gray-300 leading-6">
+            Your one-stop shop for fashion and lifestyle essentials. Discover
+            premium quality products at affordable prices.
+          </p>
+        </div>
 
+        <!-- Quick Links -->
+        <div>
+          <h2 class="font-semibold mb-4">QUICK LINKS</h2>
+          <ul class="flex flex-col gap-2 text-sm text-gray-300">
+            <li class="hover:text-white cursor-pointer transition">Home</li>
+            <li class="hover:text-white cursor-pointer transition">Products</li>
+            <li class="hover:text-white cursor-pointer transition">About</li>
+            <li class="hover:text-white cursor-pointer transition">Contact</li>
+          </ul>
+        </div>
 
-     </main>
+        <!-- Support Links -->
+        <div>
+          <h2 class="font-semibold mb-4">SUPPORT</h2>
+          <ul class="flex flex-col gap-2 text-sm text-gray-300">
+            <li class="hover:text-white cursor-pointer transition">
+              Help Center
+            </li>
+            <li class="hover:text-white cursor-pointer transition">
+              Privacy Policy
+            </li>
+            <li class="hover:text-white cursor-pointer transition">
+              Terms & Conditions
+            </li>
+            <li class="hover:text-white cursor-pointer transition">Returns</li>
+          </ul>
+        </div>
 
-     <footer class="bg-zinc-900">
-        <section class="max-w-6xl mx-auto flex items-start justify-between">
-            <div>
-                <h2 class="text-violet-700 py-4">SwiftCart</h2>
-                <p>Your One-Stop shop for all your fashion and lifestyle needs . Quality Products are here</p>
+        <!-- Subscribe -->
+        <div>
+          <h2 class="font-semibold mb-4">SUBSCRIBE</h2>
+          <p class="text-sm text-gray-300 mb-4">
+            Get the latest news, articles and resources sent directly to your
+            inbox.
+          </p>
 
-                
-            </div>
-        </section>
-     </footer>
+          <div class="flex items-center bg-zinc-800 rounded-lg overflow-hidden">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="w-full px-4 py-3 bg-transparent text-sm outline-none placeholder-gray-400"
+            />
+            <button
+              class="bg-blue-800 hover:bg-blue-700 px-5 py-3 text-sm font-medium transition"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Line -->
+      <div
+        class="border-t border-zinc-700 text-center text-sm text-gray-400 py-4"
+      >
+        © 2026 SwiftCart. All rights reserved.
+      </div>
+    </footer>
   </body>
 </html>
