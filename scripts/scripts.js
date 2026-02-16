@@ -12,8 +12,21 @@ const LoadAllProducts = () => {
     .then((products) => {
       AllProducts = products;
       Products(AllProducts);
+      TrendingProduct(AllProducts); // Add this line
     });
 };
+
+
+const LoadAllProductsTwo = () => {
+  fetch("https://fakestoreapi.com/products")
+    .then((data) => data.json())
+    .then((products) => {
+      TrendingProduct(products); // Add this line
+    });
+};
+
+
+
 function toSentenceCase(text) {
   return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 }
@@ -224,7 +237,7 @@ const displayModal = (Product) => {
                 </div>
                 <div class="card-actions grid grid-cols-1 md:grid-cols-3">
                 <button 
-                onClick="ProductDetails(${product.id})"
+                onClick="ProductDetails(${Product.id})"
                 class="btn btn-sm w-full rounded-lg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -297,5 +310,115 @@ const ProductDetails = (id) => {
     .then((singleProduct) => displayModal(singleProduct));
 };
 
+const TrendingProduct = (products) => {
+  console.log(AllProducts);
+  const TrendingContainer = document.getElementById("TrendingList");
+  const topProducts = products
+    .map((product) => {
+      const score = product.rating.rate * (product.rating.count / 100);
+
+      return { ...product, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 4);
+
+  for (let product of topProducts) {
+    const card = document.createElement("div");
+    card.className = "card mx-auto bg-base-100 w-full max-w-92";
+
+    card.innerHTML = `
+            <figure class="h-64 overflow-hidden bg-gray-100">
+              <img
+              class="h-full w-48 p-4"
+                src="${product.image}"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body p-4 border border-gray-200 rounded-b-xl">
+              <div class="text-xs flex justify-between items-center">
+                <h3
+                  class="py-1 px-2 rounded-full bg-violet-100 text-violet-700 font-medium"
+                >
+                  ${toSentenceCase(product.category)}
+                </h3>
+                <div class="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="size-5 text-yellow-400"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+
+                  <span class="font-semibold">${product.rating.rate}(${product.rating.count})</span>
+                </div>
+              </div>
+              <div class="py-2 text-lg text-left font-semibold">
+                <h2>${shortenText(product.title, 3)}</h2>
+                <h2 ><span>$</span>${product.price}</h2>
+              </div>
+
+              <div class="card-actions grid grid-cols-2">
+                <button 
+                onClick="ProductDetails(${product.id})"
+                class="btn btn-sm w-full rounded-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                  </svg>
+
+                  <span>Details</span>
+                </button>
+
+                <button
+                  onClick=""
+                  class="btn btn-sm bg-violet-600 text-white w-full rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+
+                  <span>Add</span>
+                </button>
+              </div>
+            </div>
+      `;
+
+    TrendingContainer.appendChild(card);
+  }
+};
+
 LoadCatagories();
 LoadAllProducts();
+LoadAllProductsTwo();

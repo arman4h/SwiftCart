@@ -24,9 +24,9 @@
       font-weight: bold;
     }
   </style>
-  <body class="px-2">
+  <body >
     <!-- Navbar -->
-    <header class="border-b border-b-gray-300">
+    <header class="border-b border-b-gray-300 px-2">
       <div class="navbar bg-base-100 p-0 max-w-6xl mx-auto">
         <div class="navbar-start">
           <a
@@ -85,10 +85,10 @@
               tabindex="-1"
               class="menu menu-sm dropdown-content text-base bg-base-100 rounded-box z-1 mt-3 w-24 p-2 shadow"
             >
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./product.html">Product</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./product.html">Product</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./contact.html">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -97,7 +97,7 @@
 
     <header
       id="hero"
-      class="h-full bg-cover bg-center relative"
+      class="h-full bg-cover bg-center relative "
       style="
         background-image:
           linear-gradient(
@@ -108,7 +108,7 @@
           url(&quot;./assets/banner-image.png&quot;);
       "
     >
-      <section class="text-white max-w-6xl mx-auto py-48 relative z-10">
+      <section class="text-white max-w-6xl mx-auto py-48 px-4 relative z-10">
         <h1 class="text-3xl md:text-6xl font-bold">Best Collection For You</h1>
         <p class="text-sm md:text-base max-w-xl text-gray-300 font-medium">
           Discover the latest trends in fashion, electronics and more. Shop with
@@ -123,7 +123,7 @@
     </header>
 
     <!-- main -->
-    <main class="bg-violet-100 mx-auto py-5">
+    <main class="bg-violet-100 mx-auto py-5 px-2">
       <!-- Why Us -->
       <section class="max-w-6xl mx-auto">
         <div class="flex flex-col justify-center text-center py-10">
@@ -133,8 +133,10 @@
           </p>
         </div>
 
-        <div class="py-10 flex items-start justify-between h-auto">
-          <div id="Card-1" class="max-w-62 bg-white p-4 rounded-lg h-full">
+        <div
+          class="py-10 flex mx-auto flex-col md:flex-row items-center justify-center md:justify-between h-auto gap-16 md:gap-0"
+        >
+          <div id="Card-1" class="max-w-64 bg-white p-4 rounded-lg h-full">
             <div
               class="relative -top-10 drop-shadow-md -mb-5 p-2 rounded-lg bg-violet-100 border-4 border-white w-14"
             >
@@ -169,14 +171,14 @@
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth="{1.5}"
+                stroke-width="1.5"
                 stroke="currentColor"
-                className="size-6"
+                class="size-6"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z"
                 />
               </svg>
             </div>
@@ -197,13 +199,13 @@
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth="{1.5}"
+                stroke-width="1.5"
                 stroke="currentColor"
-                className="size-6"
+                class="size-6"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                   d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
                 />
               </svg>
@@ -224,14 +226,14 @@
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth="{1.5}"
+                stroke-width="1.5"
                 stroke="currentColor"
-                className="size-6"
+                class="size-6"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
                 />
               </svg>
             </div>
@@ -248,11 +250,14 @@
     </main>
 
     <!-- Tredning -->
-    <main class="max-w-6xl mx-auto">
-      <h1>Trending Now</h1>
+    <main class="max-w-6xl mx-auto py-10 px-2">
+      <h1 class="pb-2 pt-5">Trending Now</h1>
 
       <!-- Dynamic Trending -->
-      <div></div>
+      <div
+        id="TrendingList"
+        class="pb-10 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+      ></div>
     </main>
 
     <footer class="bg-zinc-900 text-white">
@@ -324,5 +329,10 @@
         © 2026 SwiftCart. All rights reserved.
       </div>
     </footer>
+
+    <!-- Modal Container -->
+    <div id="ModelView"></div>
+
+    <script src="./scripts/scripts.js"></script>
   </body>
 </html>
