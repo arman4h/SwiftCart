@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box flex flex-col gap-5">
+        <div class="flex items-start gap-2">
+          <div class="w-full h-full">
+            <img class="h-72 w-full p-4" src="${Product.image}" alt="Shoes" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">${Product.title}</h3>
+            <div>
+              <h2 class="text-sm font-semibold">Meaning</h2>
+              <h2 class="text-xl hind-siliguri-bold">${Product.meaning}</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button
+              class="bg-indigo-600 text-sm text-white px-3 btn py-2 font-bold border-indigo-600 cursor-pointer rounded-md"
+            >
+              Continue Learning
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
