@@ -4,12 +4,16 @@ const LoadCatagories = () => {
     .then((catagories) => Catagories(catagories));
 };
 
+let AllProducts = [] ;
+
 const LoadAllProducts = () => {
   fetch("https://fakestoreapi.com/products")
     .then((data) => data.json())
-    .then((products) => Products(products));
-};
-
+    .then(products => {
+        AllProducts = products ; 
+        Products(AllProducts)
+    })
+}
 function toSentenceCase(text) {
   return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 }
@@ -20,11 +24,6 @@ function shortenText(text, wordLimit) {
   if (words.length <= wordLimit) return text;
   return words.slice(0, wordLimit).join(" ") + " ...";
 }
-
-
-const LoadProducts = (catagory) => {
-  console.log(catagory);
-};
 
 const Catagories = (catagories) => {
   const CatagoryContainer = document.getElementById("catagories");
@@ -40,7 +39,6 @@ const Catagories = (catagories) => {
             /></span>
              All
           </button> 
-  
   `;
 
   CatagoryContainer.appendChild(allbtn);
@@ -68,10 +66,15 @@ const Catagories = (catagories) => {
 
 // Products
 
-const Products = (products) => {
+const Products = (allproducts) => {
   const ProductContainer = document.getElementById("products");
+  const LoadingContainer = document.getElementById("loading") ;
 
-  for (product of products) {
+  LoadingContainer.className = "hidden"
+
+  ProductContainer.innerHTML= `` ;
+
+  for (product of allproducts) {
     const prdCard = document.createElement("div");
     prdCard.className = "card bg-base-100 max-w-80";
 
@@ -168,5 +171,22 @@ const Products = (products) => {
   }
 };
 
-LoadCatagories();
-LoadAllProducts();
+function LoadProducts(category) {
+    console.log(category) ;
+    if (category == 'all') {
+        LoadAllProducts();
+        return ; 
+    } 
+
+    fetch(`https://fakestoreapi.com/products/category/${category}`)
+        .then(res => res.json())
+        .then(filterdProducts => {
+            AllProducts = filterdProducts ; 
+            Products(AllProducts)
+        })
+}
+
+
+LoadCatagories() ;
+LoadAllProducts() ;
+
