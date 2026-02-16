@@ -12,7 +12,6 @@ const LoadAllProducts = () => {
     .then((products) => {
       AllProducts = products;
       Products(AllProducts);
-      TrendingProduct(AllProducts); // Add this line
     });
 };
 
