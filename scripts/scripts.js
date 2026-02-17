@@ -258,7 +258,7 @@ const displayModal = (Product) => {
                     />
                   </svg>
 
-                  <span>Details</span>
+                  <span>Buy Now</span>
                 </button>
 
                 <button
@@ -280,7 +280,7 @@ const displayModal = (Product) => {
                     />
                   </svg>
 
-                  <span>Add</span>
+                  <span>Add to Cart</span>
                 </button>
                 <div class="h-auto flex w-full">
                   <form method="dialog" class="w-full">
